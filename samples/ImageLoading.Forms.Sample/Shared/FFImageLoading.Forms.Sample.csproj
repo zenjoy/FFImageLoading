@@ -34,11 +34,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Windows Debug|AnyCPU'">
     <OutputPath>bin\Windows Debug\</OutputPath>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Windows Release|AnyCPU'">
     <OutputPath>bin\Windows Release\</OutputPath>
@@ -47,6 +49,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,17 +77,6 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FFImageLoading.Common\FFImageLoading-contrib.csproj">
-      <Project>{51CA3BE2-DF00-4F49-8054-E5C776992B61}</Project>
-      <Name>FFImageLoading-contrib</Name>
-    </ProjectReference>
-    <Reference Include="FFImageLoading">
-      <HintPath>..\..\..\packages\Xamarin.FFImageLoading.1.1.7-alpha5\lib\portable-net45+win+wp80+MonoTouch10+MonoAndroid10+xamarinmac20+xamarinios10\FFImageLoading.Transformations.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\..\FFImageLoading.Forms\FFImageLoading.Forms.csproj">
-      <Project>{3D6C1F12-68D7-44C2-A7DE-8E7942627A01}</Project>
-      <Name>FFImageLoading.Forms</Name>
-    </ProjectReference>
     <Reference Include="DLToolkit.PageFactory.Forms, Version=1.0.5779.27266, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\packages\DLToolkit.PageFactory.Forms.1.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\DLToolkit.PageFactory.Forms.dll</HintPath>
     </Reference>
@@ -100,12 +92,22 @@
     <Reference Include="Xamarin.Forms.Xaml, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\packages\Xamarin.Forms.1.4.4.6392\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <ProjectReference Include="..\..\..\FFImageLoading.Transformations\FFImageLoading.Transformations.csproj">
-      <Project>{E68FD3BB-5851-45CC-9B33-DE6AB28B9984}</Project>
-      <Name>FFImageLoading.Transformations</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FFImageLoading.Common\FFImageLoading-contrib.csproj">
+      <Project>{51ca3be2-df00-4f49-8054-e5c776992b61}</Project>
+      <Name>FFImageLoading-contrib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FFImageLoading.Forms\FFImageLoading.Forms.csproj">
+      <Project>{3d6c1f12-68d7-44c2-a7de-8e7942627a01}</Project>
+      <Name>FFImageLoading.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FFImageLoading.Transformations\FFImageLoading.Transformations.csproj">
+      <Project>{e68fd3bb-5851-45cc-9b33-de6ab28b9984}</Project>
+      <Name>FFImageLoading.Transformations</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
