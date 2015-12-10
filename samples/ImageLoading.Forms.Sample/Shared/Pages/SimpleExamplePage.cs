@@ -18,11 +18,11 @@ namespace FFImageLoading.Forms.Sample.Pages
 				WidthRequest = 300,
 				HeightRequest = 300,
 				CacheDuration = TimeSpan.FromDays(30),
-				DownsampleHeight = 300,
+				DownsampleToViewSize = true,
 				RetryCount = 0,
 				RetryDelay = 250,
 				TransparencyEnabled = false,
-				Source = "http://lorempixel.com/output/city-q-c-600-600-5.jpg",
+				Source = "http://loremflickr.com/600/600/nature?filename=simple.jpg",
 			};
 
 			Content =  cachedImage;
